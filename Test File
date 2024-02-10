@@ -5,3 +5,4 @@ Test file change 3rd time
 
 git squash rebase change 1
 git squash rebase change 2
+git squash rebase change 3
