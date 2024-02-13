@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function number(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        const input_number = prompt("Enter the number:");
+        const output = number(parseInt(input_number));
+        console.log(output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

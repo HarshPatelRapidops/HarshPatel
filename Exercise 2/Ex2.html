@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function insertDashes(number) {
+    const num = number.toString();
+    let result = '';
+    
+    for (let i = 0; i < num.length; i++) {
+        result += num[i];
+        
+        if (parseInt(num[i]) % 2 === 0 && parseInt(num[i+1]) % 2 === 0) {
+            result += '-';
+        }
+    }
+    
+    return result;
+}
+
+    function displayResult() {
+        const inputNumber = document.getElementById("inputNumber").value;
+        const output = insertDashes(inputNumber);
+        document.getElementById("output").textContent = "Output: " + output;
+    }
+</script>
+</head>
+<body>
+    <h1>Insert Dashes</h1>
+    <p>Enter a number: <input type="text" id="inputNumber"></p>
+    <button onclick="displayResult()">Insert Dashes</button>
+    <p id="output"></p>
+</body>
+</html>

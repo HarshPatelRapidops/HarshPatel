@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    const staticArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    function getElements(array, n) {
+        if (n <= 0) {
+            return {
+                firstN: [],
+                lastN: []
+            };
+        }
+        
+        const firstN = array.slice(0, n);
+        const lastN = array.slice(-n);
+        
+        return {
+            firstN: firstN,
+            lastN: lastN
+        };
+    }
+
+    function displayResults() {
+    const input = parseInt(document.getElementById("inputNumber").value);
+    const output = getElements(staticArray, input);
+    document.getElementById("firstElements").textContent = "First " + input + " elements: " + output.firstN;
+    document.getElementById("lastElements").textContent = "Last " + input + " elements: " + output.lastN;
+    }
+</script>
+</head>
+<body>
+    <h1>Get Elements</h1>
+    <p>Enter the number : 
+    <input type="number" id="inputNumber" value=""></p>
+    <button onclick="displayResults()">Get Elements</button>
+    <p id="firstElements"></p>
+    <p id="lastElements"></p>
+</body>
+</html>
