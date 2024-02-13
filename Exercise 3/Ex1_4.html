@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Table</title>
+<script>
+function createTable() {
+    const rows = parseInt(prompt("Enter the number of rows:"));
+    const cols = parseInt(prompt("Enter the number of columns:"));
+
+    const table = document.getElementById("myTable");
+
+    table.innerHTML = '';
+
+    for (let i = 0; i < rows; i++) {
+        const row = table.insertRow();
+        for (let j = 0; j < cols; j++) {
+            const cell = row.insertCell();
+            cell.textContent = "Row-" + i + " Column-" + j;
+        }
+    }
+}
+</script>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <table id="myTable" border="1"></table>
+</body>
+</html>

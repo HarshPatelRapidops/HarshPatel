@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const inputEmail = prompt("Enter your email address:");
+
+        function identifyEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+
+        function hideEmail(email) {
+            const atIndex = email.indexOf('@');
+            const username = email.substring(0, atIndex);
+            const domain = email.substring(atIndex);
+            const hiddenUsername = username.charAt(0) + '*'.repeat(username.length - 2) + username.charAt(username.length - 1);
+            return hiddenUsername + domain;
+        }
+
+
+        if (identifyEmail(inputEmail)) {
+            const hiddenEmail = hideEmail(inputEmail);
+            console.log("Input: " + inputEmail);
+            console.log("Output: " + hiddenEmail);
+        } else {
+            console.log("Invalid email address.");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
