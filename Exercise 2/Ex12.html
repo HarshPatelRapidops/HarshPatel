@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function string_chop(string, length) {
+            const chunks = [];
+            for (let i = 0; i < string.length; i += length) {
+                chunks.push(string.slice(i, i + length));
+            }
+            return chunks;
+        }
+
+    const string = prompt("Enter the string:");
+    const length = parseInt(prompt("Enter the length of chunks:"));
+
+    const result = string_chop(string, length);
+    console.log(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

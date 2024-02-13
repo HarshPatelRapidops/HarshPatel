@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const staticString = "This is a sample string";
+        const inputString = prompt("Enter the string to insert:");
+        const inputPosition = parseInt(prompt("Enter the position to insert (default is 1):")) || 1; 
+        
+        function insertString(originalString, stringToInsert, position = 1) {
+            const firstPart = originalString.slice(0, position);
+            const secondPart = originalString.slice(position);
+            return firstPart + stringToInsert + secondPart;
+        }
+
+        const output = insertString(staticString, inputString, inputPosition);
+        console.log("Output:", output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

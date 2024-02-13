@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const staticArray = [
+                {name: "Jack", age: 23},
+                {name: "Sam", age: 12},
+                {name: "Max", age: 20}
+            ];
+            function modifyArray(array, operation, position, newObject) {
+                if (operation === "delete") {
+                    if (position >= 0 && position <= array.length) {
+                        array.splice(position, 1);
+                        return array;
+                    } else {
+                        return "Error: Invalid position. Position does not exist in the array.";
+                    }
+                } else if (operation === "insert") {
+                    if (position >= 0 && position <= array.length + 1) {
+                        array.splice(position , 0, newObject);
+                        return array;
+                    } else {
+                        return "Error: Invalid position. Position does not exist in the array.";
+                    }
+                } 
+            }
+
+
+        const operation = prompt("Enter 'delete' or 'insert':");
+
+        if (operation === "delete") {
+            const deletePosition = parseInt(prompt("Enter the position to delete:"));
+            console.log(modifyArray(staticArray, operation, deletePosition));
+        } else if (operation === "insert") {
+            const insertPosition = parseInt(prompt("Enter the position to insert:"));
+            const insertName = prompt("Enter the name to insert:");
+            const insertAge = parseInt(prompt("Enter the age to insert:"));
+            const newObject = {name: insertName, age: insertAge};
+            console.log(modifyArray(staticArray, operation, insertPosition, newObject));
+        } else {
+            console.log("Invalid operation. Please specify 'delete' or 'insert'.");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDateDiff(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    // Calculate time difference in milliseconds
+    const diffMs = Math.abs(end - start);
+
+    // Calculate time difference in various units
+    const oneMinuteMs = 1000 * 60;
+    const oneHourMs = oneMinuteMs * 60;
+    const oneDayMs = oneHourMs * 24;
+    const oneWeekMs = oneDayMs * 7;
+    const oneMonthMs = oneDayMs * 30.44; // Approximation for a month
+    const oneYearMs = oneDayMs * 365.25; // Approximation for a year
+
+    const years = Math.floor(diffMs / oneYearMs);
+    const months = Math.floor(diffMs / oneMonthMs);
+    const weeks = Math.floor(diffMs / oneWeekMs);
+    const days = Math.floor(diffMs / oneDayMs);
+    const hours = Math.floor(diffMs / oneHourMs);
+    const minutes = Math.floor(diffMs / oneMinuteMs);
+
+    return { years, months, weeks, days, hours, minutes };
+}
+
+const startDate = prompt("Enter the start date (YYYY-MM-DD HH:MM:SS):");
+const endDate = prompt("Enter the end date (YYYY-MM-DD HH:MM:SS):");
+const diff = getDateDiff(startDate, endDate);
+
+console.log(diff);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

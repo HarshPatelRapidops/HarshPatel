@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Operations</title>
+<script>
+    const array_a = [0, 1, 2, 3];
+    const array_b = [3, 4, 5];
+
+    
+    let unionArray = [new Set([...array_a, ...array_b])];
+    let differenceA = array_a.filter(x => !array_b.includes(x));
+    let differenceB = array_b.filter(x => !array_a.includes(x));
+    let intersection = array_a.filter(x => array_b.includes(x));
+
+   
+
+    console.log("union_array:", unionArray);
+    console.log("A-B", differenceA);
+    console.log("A-B", differenceB);
+    console.log("Intersection", intersection);
+</script>
+</head>
+<body>
+</body>
+</html>

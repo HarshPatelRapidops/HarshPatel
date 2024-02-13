@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const inputDate = "01-09-2020";
+            function getMonthName(dateString) {
+                const [day, month, year] = dateString.split('-'); // Split the dateString into day, month, and year
+
+                const formattedDate = new Date(year, month - 1, day); // Create a Date object
+                
+                const options = { month: 'long' };
+                const monthName = new Intl.DateTimeFormat('en-US', options).format(formattedDate); // Format the date to get the month name
+                return monthName;
+        }
+
+        const monthName = getMonthName(inputDate);
+        console.log("Output:", monthName);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    const staticArray = [0, 1, 1, 2, 3, 4, 5, 5, 5, 6, 7, 7, 8, 9];
+    function mostFrequentItem(array) {
+        const countArray = {};
+        let mostFrequent = null;
+        let maxCount = 0;
+        
+        array.forEach(item => {
+            if (countArray[item]) {
+                countArray[item]++;
+            } else {
+                countArray[item] = 1;
+            }
+        });
+
+        for (const item in countArray) {
+            if (countArray[item] > maxCount) {
+                mostFrequent = item;
+                maxCount = countArray[item];
+            }
+        }
+
+        return mostFrequent;
+    }
+
+    function displayResult() {
+        const result = mostFrequentItem(staticArray);
+        document.getElementById("output").textContent = "Most frequent item: " + result;
+    }
+</script>
+</head>
+<body>
+    <h1>Find Most Frequent Item</h1>
+    <button onclick="displayResult()">Find Most Frequent Item</button>
+    <p id="output"></p>
+</body>
+</html>
