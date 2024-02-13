@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const sportsGroup = [{
+    Name: 'Ravindra',
+    Sports: ['Chess', 'Cricket']
+  },
+  {
+    Name: 'Ravi',
+    Sports: ['Cricket', 'Football']
+  },
+  {
+    Name: 'Rishabh',
+    Sports: ['Table-Tennis', 'Football']
+  }
+];
+
+function displaySportsGroup(sportsGroup) {
+  const result = {};
+
+  sportsGroup.forEach(member => {
+    member.Sports.forEach(sport => {
+      if (!result[sport]) {
+        result[sport] = [];
+      }
+      result[sport].push(member.Name);
+    });
+  });
+
+  // Convert the result object into an array of objects
+  const output = Object.keys(result).map(sport => ({
+    [sport]: result[sport]
+  }));
+
+  return output;
+}
+
+const output = displaySportsGroup(sportsGroup);
+console.log(output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
