@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+        }
+
+        #start {
+            background-color: green;
+            color: white;
+        }
+
+        #stop {
+            background-color: red;
+            color: white;
+        }
+
+        #resume {
+            background-color: blue;
+            color: white;
+        }
+
+        #reset {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Stopwatch</h1>
+        <div>
+            <span>Date: </span><span id="date"></span><br>
+            <span>Time: </span><span id="time"></span>
+        </div>
+        <div>
+            <span id="hour">00</span>:
+            <span id="minute">00</span>:
+            <span id="second">00</span>:
+            <span id="count">00</span>
+        </div>
+        <button id="start">Start</button>
+        <button id="stop" disabled>Stop</button>
+        <button id="resume" disabled>Resume</button>
+        <button id="reset" disabled>Reset</button>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
