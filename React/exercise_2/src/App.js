@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import './App.css';
 import DynamicTable from './DynamicTable';
 
 function App() {
